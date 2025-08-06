@@ -5,10 +5,14 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
+import android.widget.ImageView
+import android.widget.LinearLayout
+
 import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.mievento.ideal.R
 import com.mievento.ideal.data.models.AuthResponse
 import com.mievento.ideal.data.repositories.AuthRepository
 import com.mievento.ideal.presentation.presenters.LoginPresenter
@@ -105,11 +109,16 @@ class LoginActivity : AppCompatActivity(), LoginView {
             setPadding(0, 64, 0, 48)
 
             // Logo placeholder
-            val logoText = TextView(this@LoginActivity).apply {
-                text = "🎉"
-                textSize = 72f
-                gravity = Gravity.CENTER
-                setPadding(0, 0, 0, 16)
+            val logoImage = ImageView(this@LoginActivity).apply {
+                setImageResource(R.drawable.logo)
+                layoutParams = LinearLayout.LayoutParams(
+                    200, // Ancho en píxeles
+                    200  // Alto en píxeles
+                ).apply {
+                    gravity = Gravity.CENTER
+                    setMargins(0, 0, 0, 16)
+                }
+                scaleType = ImageView.ScaleType.FIT_CENTER // Ajuste de imagen dentro del tamaño
             }
 
             // Título de la app
@@ -129,7 +138,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
                 gravity = Gravity.CENTER
             }
 
-            addView(logoText)
+            addView(logoImage)
             addView(appTitle)
             addView(subtitle)
         }
@@ -186,7 +195,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Botón de login
             loginButton = Button(this@LoginActivity).apply {
-                text = "🚀 Iniciar Sesión"
+                text = "Iniciar Sesión"
                 textSize = 18f
                 setBackgroundColor(Color.parseColor("#2196F3"))
                 setTextColor(Color.WHITE)
