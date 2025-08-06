@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permisos de red -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Permisos de almacenamiento -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Permisos de cámara -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Para Android 10+ -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!-- Features -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <application
+        android:name=".MiEventoIdealApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.MiEventoIdeal"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mievento.ideal.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <activity
+            android:name=".presentation.views.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Autenticación -->
+        <activity
+            android:name=".presentation.views.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Activity Principal -->
+        <activity
+            android:name=".presentation.views.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Gestión de Eventos -->
+        <activity
+            android:name=".presentation.views.UserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:label="Eventos Disponibles" />
+
+        <activity
+            android:name=".presentation.views.CreateEventActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+        <activity
+            android:name=".presentation.views.MyParticipationsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:label="Mis Participaciones" />
+
+        <activity
+            android:name=".presentation.views.EventDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Participaciones -->
+        <activity
+            android:name=".presentation.views.AvailableEventsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+
+        <activity
+            android:name=".presentation.views.EventParticipantsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Gestión de Invitados -->
+        <activity
+            android:name=".presentation.views.GuestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Gestión de Tareas -->
+        <activity
+            android:name=".presentation.views.TaskActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Gestión de Proveedores -->
+        <activity
+            android:name=".presentation.views.ProviderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Gestión de Gastos -->
+        <activity
+            android:name=".presentation.views.ExpenseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Reagendamientos -->
+        <activity
+            android:name=".presentation.views.RescheduleRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <activity
+            android:name=".presentation.views.AdminRescheduleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <activity
+            android:name=".presentation.views.UserRescheduleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+        <!-- Notificaciones -->
+        <activity
+            android:name=".presentation.views.NotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MiEventoIdeal" />
+
+    </application>
+
+
+</manifest>
