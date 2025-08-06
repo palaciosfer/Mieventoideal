@@ -93,7 +93,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
             // Email
             addView(TextView(this@RegisterActivity).apply {
-                text = "📧 Email"
+                text = "Email"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 0, 0, 8)
@@ -110,7 +110,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
             // Nombre completo
             addView(TextView(this@RegisterActivity).apply {
-                text = "👤 Nombre Completo"
+                text = "Nombre Completo"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 16, 0, 8)
@@ -127,7 +127,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
             // Teléfono
             addView(TextView(this@RegisterActivity).apply {
-                text = "📱 Teléfono"
+                text = "Teléfono"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 16, 0, 8)
@@ -144,7 +144,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
             // Contraseña
             addView(TextView(this@RegisterActivity).apply {
-                text = "🔒 Contraseña"
+                text = "Contraseña"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 16, 0, 8)
@@ -161,7 +161,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
             // Confirmar contraseña
             addView(TextView(this@RegisterActivity).apply {
-                text = "🔒 Confirmar Contraseña"
+                text = "Confirmar Contraseña"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 16, 0, 8)
@@ -184,7 +184,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
             setPadding(0, 16, 0, 16)
 
             registerButton = Button(this@RegisterActivity).apply {
-                text = "🚀 Crear Cuenta"
+                text = "Crear Cuenta"
                 textSize = 18f
                 setBackgroundColor(Color.parseColor("#4CAF50"))
                 setTextColor(Color.WHITE)
@@ -193,7 +193,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
             }
 
             backToLoginButton = Button(this@RegisterActivity).apply {
-                text = "🔙 Volver al Login"
+                text = "Volver al Login"
                 textSize = 16f
                 setBackgroundColor(Color.parseColor("#757575"))
                 setTextColor(Color.WHITE)

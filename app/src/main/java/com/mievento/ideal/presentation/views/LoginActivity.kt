@@ -142,7 +142,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Campo de email
             val emailLabel = TextView(this@LoginActivity).apply {
-                text = "📧 Email"
+                text = "Email"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 0, 0, 8)
@@ -158,7 +158,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Campo de contraseña
             val passwordLabel = TextView(this@LoginActivity).apply {
-                text = "🔒 Contraseña"
+                text = "Contraseña"
                 textSize = 16f
                 setTextColor(Color.parseColor("#424242"))
                 setPadding(0, 16, 0, 8)
@@ -204,7 +204,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Botón de registro
             registerButton = Button(this@LoginActivity).apply {
-                text = "📝 Crear Cuenta"
+                text = " Crear Cuenta"
                 textSize = 16f
                 setBackgroundColor(Color.parseColor("#4CAF50"))
                 setTextColor(Color.WHITE)
@@ -226,7 +226,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Olvidé mi contraseña
             forgotPasswordText = TextView(this@LoginActivity).apply {
-                text = "¿Olvidaste tu contraseña?"
+                text = ""
                 textSize = 14f
                 setTextColor(Color.parseColor("#1976D2"))
                 gravity = Gravity.CENTER
@@ -238,7 +238,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
             // Información de roles
             val roleInfo = TextView(this@LoginActivity).apply {
-                text = "💡 Tip: Los administradores pueden crear eventos\nLos usuarios pueden participar en eventos"
+                text = ""
                 textSize = 12f
                 setTextColor(Color.parseColor("#757575"))
                 gravity = Gravity.CENTER
@@ -407,7 +407,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
         progressBar.gone()
         loginButton.isEnabled = true
         registerButton.isEnabled = true
-        loginButton.text = "🚀 Iniciar Sesión"
+        loginButton.text = "Iniciar Sesión"
     }
 
     override fun showError(message: String) {
@@ -420,22 +420,22 @@ class LoginActivity : AppCompatActivity(), LoginView {
             message.contains("User not found", ignoreCase = true) ->
                 "❌ Usuario no encontrado. ¿Ya tienes cuenta?"
             message.contains("network", ignoreCase = true) ->
-                "🌐 Error de conexión. Verifica tu internet"
+                " Error de conexión. Verifica tu internet"
             message.contains("timeout", ignoreCase = true) ->
-                "⏱️ Tiempo de espera agotado. Intenta nuevamente"
-            else -> "❌ Error: $message"
+                " Tiempo de espera agotado. Intenta nuevamente"
+            else -> " Error: $message"
         }
 
         showToast(userFriendlyMessage)
     }
 
     override fun onLoginSuccess(response: AuthResponse) {
-        Log.d(TAG, "🎉 Login exitoso recibido del presenter")
+        Log.d(TAG, " Login exitoso recibido del presenter")
         handleLoginSuccess(response)
     }
 
     override fun showMessage(message: String) {
-        Log.d(TAG, "💬 Mensaje: $message")
+        Log.d(TAG, " Mensaje: $message")
         showToast(message)
     }
 
